@@ -1,0 +1,155 @@
+//https://repl.it/@Kunl19/NumberGuesser#main.cpp
+
+//Primer 2
+
+#include <cstdlib>
+#include <random>
+#include <iostream>
+#include <cctype>
+
+using namespace std;
+
+
+void myFunction() {
+
+    char level;
+    int randomNumber1 = rand() % 10 + 1;
+    int randomNumber2 = rand() % 100 + 1;
+    int randomNumber3 = rand() % 1000 + 1;
+
+
+    cout << "Enter a level: (1,2,3) ";
+    cin >> level;
+
+    int num = 0;
+    int guess = 0;
+
+
+    if (level == '1') {
+        int guess = 0;
+
+        cout << "Enter a random number between 1 and 10: ";
+        while (guess != randomNumber1) {
+            num++;
+            //guess counter
+            cin >> guess;
+            //cout << num << "\t";
+            //while number not found 
+            if (guess == 0) {
+                cout << "Enter a correct value";
+            }
+
+            else if (guess == randomNumber1) {
+                cout << "You have guessed the correct number: " << guess;
+            }
+            else if (guess != randomNumber1) {
+                if (guess > randomNumber1) {
+                    cout << guess << ": Your guess it too high \n";
+                }
+                else if (guess < randomNumber1) {
+                    cout << guess << ": Your guess is too low \n";
+
+                }
+                else{
+                  cout << "Enter a real number";
+                }
+                //Entering a letter caused infinite loop
+            }
+
+        }
+
+        cout << "\n" << "You took " << num << " guesses";
+
+    }
+
+    else if (level == '2') {
+        int guess{};
+
+        //int num;
+        cout << "Enter a random number between 1 and 100: ";
+        //cout << randomNumber2;
+        //check what the random number was to check if found
+        while (guess != randomNumber2) {
+            num++;
+
+            cin >> guess;
+            //cout << num;
+            //while number not found 
+            if (guess == randomNumber2) {
+                cout << "You have guessed the correct number: " << guess;
+            }
+            else if (guess != randomNumber2) {
+                if (guess > randomNumber2) {
+                    cout << guess << ": Your guess it too high \n";
+                }
+                else if (guess < randomNumber2) {
+                    cout << guess << ": Your guess is too low \n";
+
+                }
+                else{
+                  cout << "Enter a real number";
+                }
+            }
+        }
+
+        cout << "\n" << "You took " << num << " guesses";
+
+    }
+
+    else if (level == '3') {
+        int guess{};
+        cout << "Enter a random number between 1 and 1000: ";
+        while (guess != randomNumber3) {
+            num++;
+            cin >> guess;
+
+            //cout << num;
+            //while number not found 
+            if (guess == randomNumber3) {
+                cout << "You have guessed the correct number: " << guess;
+            }
+            else if (guess != randomNumber3) {
+                if (guess > randomNumber3) {
+                    cout << guess << ": Your guess it too high \n";
+                }
+                else if (guess < randomNumber3) {
+                    cout << guess << ": Your guess is too low \n";
+                }
+                else{
+                  cout << "Enter a real number";
+                }
+            }
+        }
+
+        cout << "\n" << "You took " << num << " guesses";
+
+    }
+
+    else if (isalpha(level)) {
+        myFunction();
+    }
+
+    else {
+        myFunction();
+
+    }
+
+}
+
+int main() {
+
+    char input;
+
+
+    do {
+        myFunction();
+        cout << " \n Do you want to keep playing: (Y/N) ";
+        cin >> input;
+    } while (input == 'Y');
+
+    //runs function once, If the user wants to play game again check if he inputs Y to continue
+
+
+
+}
+
