@@ -1,0 +1,78 @@
+//https://repl.it/@Kunl19/SelfService#main.cpp
+
+//Primer 3
+
+
+#include <iostream>
+#include <vector>
+#include <numeric>
+#include <iomanip>
+
+
+
+using namespace std;
+
+double costs;
+double quantity;
+double total;
+
+
+int main(){
+    
+    vector<double> myArray;
+
+    do {
+
+        cout << "How many of this item do you want (0 items to finish shopping): \n ";
+        cin >> quantity;
+        if (!cin) {
+            cout << "Enter a numerical value \n";
+            //If a non numerial value is entered shopping total is calculated
+        }
+
+        if (quantity != 0) {
+            
+
+            cout << "Please enter the cost per individual item: \n ";
+            cin >> costs;
+
+            total = quantity * costs;
+            cout << "Total cost of this item: " << total << "\n";
+            //Adds total cost for each item into an array
+            myArray.push_back(total);
+ 
+        }
+        else {
+            break;
+        }
+    } 
+    while (quantity != 0);
+
+    cout << "Thanks for shopping: \n ";
+
+    //vector <double> myArray;
+
+    double sum;
+    sum = accumulate(myArray.begin(), myArray.end(), 0);
+
+    double tax = 0.055;
+
+    cout << "Subtotal: £" << sum << "\n";
+
+    double shoppingTax = sum * tax;
+    
+    cout << "Tax: £" << shoppingTax << "\n\n";
+
+    double total = sum + shoppingTax;
+
+    //cout << "total: £" << setprecision(2) << total <<"\n";
+    //Rounds too two decimal places
+    cout << "total: £" << total <<"\n";
+
+    
+
+
+    //Included discount
+    //shopping totals
+    
+}
