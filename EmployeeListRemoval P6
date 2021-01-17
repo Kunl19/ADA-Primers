@@ -1,0 +1,56 @@
+//https://repl.it/@Kunl19/EmployeeListRemoval#main.cpp
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    //display employee names
+    vector<string> list;
+
+    list.push_back("Kunle");
+    list.push_back("Sam");
+    list.push_back("Fred");
+    list.push_back("John");
+    list.push_back("Deji");
+    //Pushes employees names into vector array
+
+    cout << "There a five employees \n";
+
+    for (int i = 0; i < list.size(); i++) {
+        cout << list[i] << "\n";
+    }
+
+    //Loops through vector printing out the names
+
+    string name;
+
+    cout << "Remove an employee : Enter a name from the list \n";
+
+    cin >> name;
+
+    if (std::find(list.begin(), list.end(), name) != list.end()) {
+        remove(list.begin(), list.end(), name);
+
+        //find name if in the list and removes it if = name
+
+        cout << "Display new list of 4 employees \n";
+
+        for (int i = 0; i < list.size(); i++) {
+            cout << list[i] << "\n";
+        }
+
+        //Loops through new list
+
+    }
+    else {
+        cout << "Name does not exists";
+    }
+
+    //If name is not in the list outputs else statement 
+}
+
+
+  
