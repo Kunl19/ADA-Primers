@@ -1,0 +1,50 @@
+#include <iostream>
+#include <map>
+#include <string>
+
+//https://repl.it/@Kunl19/PhoneDirectory#main.cpp
+
+using namespace std;
+
+int main() {
+
+    string variable;
+
+    //items in a dictionary 
+    map<string, string> m;
+
+    //add some items to the map
+    m["ADA"] = "01174902951";
+    m["Whitgift"] = "01174902952";
+    m["UCL"] = "01174902953";
+    m["Birmingham"] = "01174902954";
+
+    cout << "Please enter a name or number to search \n";
+    cin >> variable;
+    cout << "Searching " << m.size() << " Records... \n\n";
+
+    //Loops through the dictionary 
+    for (auto item : m)
+    {   
+        //If item is found end loop
+        //item.first check place
+        if (variable == item.first) {
+            cout << "Contact Details :\n " << item.first << ", \t" << "T: " << item.second << "\n";
+            break;
+            
+        }
+        //Item.second checks the phone number
+        else if (variable == item.second) {
+            cout << "Contact Details :\n " << item.first << ", \t" << "T: " << item.second << "\n";
+            break;
+            
+        }
+      
+
+    }
+
+    //When the loop ends and no other details are found
+    cout << "No more contact details found";
+
+    
+}
