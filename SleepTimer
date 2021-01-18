@@ -1,29 +1,20 @@
 
+
 //https://repl.it/@Kunl19/Sleep-Timer#main.cpp
 
 #include <iostream>       
 #include <thread>         
-#include <chrono>         
+#include <chrono>  
+using namespace std;
 
-
-//SleepTimer function
-//input any int in the parameter
-void SleepTimer(int time){
-  for (int i=time; i>0; --i) {
-    //Loop counts down from parameter time (default 10) to 0
-    //std::cout << i << std::endl;
-    //Print all ints
-    std::this_thread::sleep_for (std::chrono::seconds(1));
-    //Duration in seconds
-  }
-
-
-  std::cout << "Wake Up\n";
+void SleepTimer(int seconds){
+  this_thread::sleep_for(std::chrono::milliseconds(seconds * seconds));
 }
 
 int main() 
 {
-  std::cout << "countdown:\n";
+  //std::cout << "countdown:\n";
+  
   SleepTimer(10);
   //function declared 
   return 0;
