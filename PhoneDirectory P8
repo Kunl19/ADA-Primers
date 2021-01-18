@@ -1,50 +1,51 @@
-#include <iostream>
-#include <map>
-#include <string>
+https://repl.it/@Kunl19/PhoneDirectory#main.cpp
 
-//https://repl.it/@Kunl19/PhoneDirectory#main.cpp
+
+#include <map>
+#include <iostream>
+#include <string>
+#include <fstream>
 
 using namespace std;
 
 int main() {
 
-    string variable;
+    //Dictionary called content
+    map<std::string, std::string> content;
+    ifstream in("new.txt");
+    string word, number;
 
-    //items in a dictionary 
-    map<string, string> m;
+    while (getline(in, number) && getline(in, word)) { content[number] = word;}
+    //Add each line in text file into dictionary 
 
-    //add some items to the map
-    m["ADA"] = "01174902951";
-    m["Whitgift"] = "01174902952";
-    m["UCL"] = "01174902953";
-    m["Birmingham"] = "01174902954";
+    // for (const auto& p : content)
+    //     std::cout << p.first << " : "
+    //     << p.second << std::endl;
+    //        std::cout << std::endl;
 
-    cout << "Please enter a name or number to search \n";
-    cin >> variable;
-    cout << "Searching " << m.size() << " Records... \n\n";
+        string variable;
 
-    //Loops through the dictionary 
-    for (auto item : m)
-    {   
-        //If item is found end loop
-        //item.first check place
-        if (variable == item.first) {
-            cout << "Contact Details :\n " << item.first << ", \t" << "T: " << item.second << "\n";
-            break;
-            
-        }
-        //Item.second checks the phone number
-        else if (variable == item.second) {
-            cout << "Contact Details :\n " << item.first << ", \t" << "T: " << item.second << "\n";
-            break;
-            
-        }
-      
+        cout << "Please enter a name or number to search \n";
 
-    }
+        cin >> variable;
+        //cout << "searching " << content.size() << " records... \n\n";
 
-    //When the loop ends and no other details are found
-    cout << "No more contact details found";
+        for (const auto& p : content)
+        
+            if (variable == p.first) {
+                cout << "contact details :\n " << p.first << ", \t" << "t: " << p.second <<endl;
 
-    
+            }
+            //Prints the contact info using dictionary keys
+
+            else if (variable == p.second) {
+                cout << "contact details :\n " << p.first << ", \t" << "t: " << p.second <<endl;
+
+            }
+
+        //Program only working when number is searched not letter
+
+        cout << "\n No more values found";
+
+
 }
