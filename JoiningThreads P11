@@ -1,1 +1,51 @@
+#include <iostream>
+#include <iostream>       
+#include <thread>         
+#include <chrono>   
 
+//https://repl.it/@Kunl19/JoiningThreads#main.cpp
+
+using namespace std;
+
+
+void sleepnow(int seconds){
+  this_thread::sleep_for(std::chrono::milliseconds(seconds * seconds));
+}
+
+ void Timer1(){
+    cout << "Thread 1 " << this_thread::get_id() << " started\n";
+    sleepnow(5);
+    cout << "Thread 1 " << this_thread::get_id() << " ended\n";
+   }
+
+void Timer2(){
+    cout << "Thread 2 " << this_thread::get_id() << " started\n";
+    sleepnow(10);
+    cout << "Thread 2 " << this_thread::get_id() << " ended\n";
+   }
+
+
+int main() {
+
+  cout << "Main Thread " << this_thread::get_id() << " started \n";
+  thread s(Timer1);
+  thread t(Timer2);
+  //s.detach();
+  //t.detach();
+  //cout << "Main Thread " << this_thread::get_id() << " retunred\n";
+
+  if(t.joinable()){
+    t.join();
+  }
+ 
+  if(s.joinable()){
+  s.join();
+  }
+
+  cout << "Main Thread " << this_thread::get_id() << " ended \n";
+
+  return 0;
+
+}
+
+//In the code above I used the join() method which called the threads execution until the specified thread has terminated or completed 
