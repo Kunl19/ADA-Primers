@@ -1,0 +1,46 @@
+#include <iostream>
+#include <iostream>       
+#include <thread>         
+#include <chrono>   
+
+//https://repl.it/@Kunl19/DetachedThreads#main.cpp
+
+using namespace std;
+
+
+void sleepnow(int seconds){
+  this_thread::sleep_for(std::chrono::milliseconds(seconds * seconds));
+}
+
+ void Timer1(){
+    cout << "Thread 1 " << this_thread::get_id() << " started\n";
+    sleepnow(5);
+    cout << "Thread 1 " << this_thread::get_id() << " ended\n";
+   }
+
+void Timer2(){
+    cout << "Thread 2 " << this_thread::get_id() << " started\n";
+    sleepnow(10);
+    cout << "Thread 2 " << this_thread::get_id() << " ended\n";
+   }
+
+
+int main() {
+
+  cout << "Main Thread " << this_thread::get_id() << " started \n";
+  thread s(Timer1);
+  thread t(Timer2);
+
+  t.detach();
+  s.detach();
+  
+  cout << "Main Thread " << this_thread::get_id() << " retunred\n";
+
+  cout << "Main Thread " << this_thread::get_id() << " ended \n";
+
+  return 0;
+  
+}
+
+//This is output is different to the joining thread as we use the detach() method making the specified thread independent from the tcalling threads execution. 
+The thread becomes non-joinable
