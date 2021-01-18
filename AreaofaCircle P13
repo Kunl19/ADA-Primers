@@ -1,0 +1,29 @@
+//https://repl.it/@Kunl19/AreaOfACircle#main.cpp
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+class circle{
+  private:
+  float PI = atan(1)*4;
+  //Gets PI
+
+  public:
+      int x;
+      circle() { x = 37; }
+      circle(int x) { x = x; }
+      ~circle() {cout << "\nDone";}
+
+      float area(float r) { return PI*(r*r); }
+
+};
+
+int main() {
+  circle myCircle;
+  cout << "Area:" << myCircle.area(27) << endl;
+  cout << "X:" << myCircle.x << endl;
+  cout << "Area:" << myCircle.area(37);
+}
+
+
