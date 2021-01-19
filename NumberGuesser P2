@@ -1,6 +1,13 @@
+Primer 2
+
+The user should be able to play a number guessing game where they can select and change the level difficulty. I generated a random number which the user has to guess.
+In a while loop if user has not guessed the number a counter increments the number of guesses until the number is found. The user is also told whether the guess is higher
+or lower than the generated number. This was done in an if and else if statement. To allow the user to play again when the correct number is selected the function is run in
+a do while function where the function is run while the user wants to continue playing the game.
+
+
 //https://repl.it/@Kunl19/NumberGuesser#main.cpp
 
-//Primer 2
 
 #include <cstdlib>
 #include <random>
@@ -13,6 +20,7 @@ using namespace std;
 void myFunction() {
 
     char level;
+    //Creates a random number between different values
     int randomNumber1 = rand() % 10 + 1;
     int randomNumber2 = rand() % 100 + 1;
     int randomNumber3 = rand() % 1000 + 1;
@@ -23,6 +31,7 @@ void myFunction() {
 
     int num = 0;
     int guess = 0;
+    //sets guess number to zero
 
 
     if (level == '1') {
@@ -31,7 +40,7 @@ void myFunction() {
         cout << "Enter a random number between 1 and 10: ";
         while (guess != randomNumber1) {
             num++;
-            //guess counter
+            //guess counter increments counter 
             cin >> guess;
             //cout << num << "\t";
             //while number not found 
