@@ -1,6 +1,12 @@
-//https://repl.it/@Kunl19/SelfService#main.cpp
-
 //Primer 3
+
+I created self-service checkout allowing the user to add an item(or many) and the price of the item. This could then be calculated and taxed giving the user a subtotal 
+before and after tax. This was done by pushing the total cost of items into a vector array. This action is completed while the number of items is not zero. I then used the 
+accumulate function to add all the prices in the array to create a subtotal.
+
+
+
+//https://repl.it/@Kunl19/SelfService#main.cpp
 
 
 #include <iostream>
