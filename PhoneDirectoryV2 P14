@@ -6,6 +6,15 @@
 
 using namespace std;
 
+void Menu() {
+
+    cout << "Phone Directory \n";
+    cout << "1.Add Entries \n";
+    cout << "2.List all Entries \n";
+    cout << "3.Number of Entries \n";
+    cout << "Please select a number or 0 to finish\n";
+}
+
 class Directory {
 
     public:
@@ -13,21 +22,13 @@ class Directory {
     int size = myMap.size();
     int end;
 
-    void ShowMenu() {
-        
-        cout << "Phone Directory \n";
-        cout << "1.Add Entries \n";
-        cout << "2.List all Entries \n";
-        cout << "3.Number of Entries \n";
-        cout << "Please select a number or 0 to finish\n";
-    }
 
     //ShowMenu method allows us to use menu across program
 
-    void Menu() {
+    void Select() {
 
         int end;
-        ShowMenu();
+        Menu();
         cin >> end;
 
         //While end is not 0 menu options are givin
@@ -52,7 +53,7 @@ class Directory {
                 //cin >> end;
             }
 
-            ShowMenu();
+            Menu();
             cin >> end;
         }
         
@@ -86,7 +87,7 @@ class Directory {
                 break;
             }
             else {
-                cout << "Enter a correct value";
+                cout << "Enter a correct value (1,2,3): ";
                 cin >> entry;
             }
         }
@@ -144,11 +145,12 @@ int main() {
   
     
     Directory directory;
-    directory.Menu();
+    directory.Select();
 
-    //Accessing Directory class to run the Menu function
+    //Accessing Directory class to run the Select function
     
     
 
   
 }
+
