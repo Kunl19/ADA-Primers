@@ -92,11 +92,12 @@ class Directory {
             }
         }
 
-        if (myMap.size() > 5 && myMap.size() > 5) {
+        if (myMap.size() > 4 && myMap.size() > 4) {
             cout << "You have reach the maximum number of entries \n\n";
         }
 
         //When the maximum number of entries you are unable to enter more entries
+        //index 0-4 is 5 entries
 
        
     }
