@@ -57,6 +57,9 @@ class Directory {
             cin >> end;
         }
         
+        cout << "Goodbye";
+
+        
     }
 
     //Allows user to add entries
