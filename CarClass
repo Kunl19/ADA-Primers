@@ -1,0 +1,183 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+//https://repl.it/@Kunl19/CarClass#main.cpp
+
+void Menu() {
+    
+        //menu
+        cout << "1. Turn Engine On\n";
+        cout << "2. Turn Engine Off\n";
+        cout << "3. Lock Car\n";
+        cout << "4. Unlock Car\n";
+        cout << "Please select a number or 0 to finish\n";
+
+
+}
+
+class Line {
+    public:
+
+        void set_colour(string col);
+        string get_colour(void);
+
+        void set_make(string mak);
+        string get_make(void);
+
+        void engine_on(void);
+        void engine_off(void);
+
+        void locked(bool lock);
+        bool status(void);
+
+        Line();  
+        ~Line();  
+
+    private:
+        double length;
+        string make;
+        string colour;
+        bool isLocked;
+};
+
+// Member functions definitions including constructor
+
+Line::Line(void) {
+    //cout << "Object is being created" << endl;
+}
+Line::~Line(void) {
+    //cout << "Object is being deleted" << endl;
+}
+
+//Set Colour
+
+void Line::set_colour(string col) {
+    colour = col;
+}
+
+string Line::get_colour(void) {
+    return colour;
+}
+
+//Car make
+
+void Line::set_make(string mak) {
+    make = mak;
+}
+
+string Line::get_make(void) {
+    return make;
+}
+
+
+//Engine status
+
+void Line::engine_on() {
+  
+}
+
+void Line::engine_off() {
+    
+}
+
+
+//Locked/Unlocked
+
+void Line::locked(bool lock) {
+    isLocked = lock;
+}
+
+bool Line::status(void) {
+    return isLocked;
+}
+
+
+
+
+
+// Main function for the program
+int main() {
+    Line line;
+
+    line.set_colour("Blue");
+    line.set_make("Honda");
+    
+    //Lock or Unlocked 
+    line.locked(true); //status  = 1
+    //line.locked(false);//status = 0
+
+    string value;
+    string status = "Off";
+
+    if (line.status() == 1) {
+        value = "locked";
+    }
+    else {
+        value = "unlocked";
+    }
+
+    cout << "Car Colour: " << line.get_colour() << " " << "Car Make: " << line.get_make() << " " << value << " " << "Engine: " << " "<< status;
+    cout << "\n";
+   
+    
+    int end;
+    Menu();
+    cin >> end;
+
+    //While end is not 0 menu options are givin
+
+    while (end != 0) {
+        
+        if (end == 1) {
+        //Engine is on
+            line.engine_on();
+            status = "On";
+
+            
+        }
+        else if (end == 2) {
+            line.engine_off();
+            status = "Off";
+        }
+
+        else if (end == 3) {
+            //Lock Car
+            if (line.status() == 0)
+            {
+                //line.status() == 1;
+                cout << "Car is now locked\n";
+                value = "locked";
+            }
+            else {
+                cout << "Car is already locked\n";
+                value = "locked";
+            }           
+        }
+        else if (end == 4) {
+            if (line.status() == 1)
+            {
+                //line.status() == 0;
+                cout << "The car is now unlocked\n";
+                value = "unlocked";
+            }
+            else {
+                cout << "Car is already unlocked\n";
+                value = "unlocked";
+            }
+        }
+        else {
+            cout << end << " :is not a valid entry \n";
+            //cin >> end;
+        }
+
+        cout << "Car Colour: " << line.get_colour() << " " << "Car Make: " << line.get_make() << " " << value << " " << "Engine: " << " " << status;
+        cout << "\n";
+        Menu();
+        cin >> end;
+    }
+    cout << "Goodbye";
+
+    return 0;
+}
+
