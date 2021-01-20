@@ -1,3 +1,11 @@
+Primer 14
+
+The program built below is a phone directory that allows the user to Add entries, List all the entries and shows them the number of entries that have been entered. The three
+main methods within the programs in the perform the main actions in the directory are within the directory class. The user can add up to 5 entries into a dictionary 
+until it reaches the maximum limit. The user can then list all entries entered and also display how many entries are in the dictionary. The select method then contains
+the logic that runs the menu until the 0 value is entered ending the program.
+
+
 //https://repl.it/@Kunl19/PhoneDirectoryV2#main.cpp
 
 #include <iostream>
@@ -56,9 +64,7 @@ class Directory {
             Menu();
             cin >> end;
         }
-        
         cout << "Goodbye";
-
         
     }
 
@@ -100,30 +106,34 @@ class Directory {
         }
 
         //When the maximum number of entries you are unable to enter more entries
-        //index 0-4 is 5 entries
 
        
     }
 
     void ListEntries() {
-        string variable;
-        cout << "please enter a name or number to search \n";
-        cin >> variable;
+        // string variable;
+        // cout << "please enter a name or number to search \n";
+        // cin >> variable;
 
         //List entires in the dictionary by looping through it 
 
 
         for (auto item : myMap)
         {
-            if (variable == item.first) {
-                cout << "contact details :\n " << item.first << ", \t" << "t: " << item.second << "\n";
+            //comment code list selected entry
 
-            }
+            // if (variable == item.first) {
+            //     cout << "contact details :\n " << item.first << ", \t" << "t: " << item.second << "\n";
 
-            else if (variable == item.second) {
-                cout << "contact details :\n " << item.first << ", \t" << "t: " << item.second << "\n\n";
+            // }
 
-            }
+            // else if (variable == item.second) {
+            //     cout << "contact details :\n " << item.first << ", \t" << "t: " << item.second << "\n\n";
+
+            // }
+
+            cout << "contact details :\n " << item.first << ", \t" << "t: " << item.second << "\n";
+
            
         }
 
@@ -151,10 +161,9 @@ int main() {
     Directory directory;
     directory.Select();
 
-    //Accessing Directory class to run the Select function
+    //Accessing Directory class to run the Menu function
     
     
 
   
 }
-
