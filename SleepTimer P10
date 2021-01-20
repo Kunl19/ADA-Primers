@@ -1,3 +1,6 @@
+Primer 10
+This program uses this_thread to block execution relative to the thread making the call. The parameter passed through into the SleepTimer function is 10 which causes the
+execution to be blocked for 10 seconds.
 
 
 //https://repl.it/@Kunl19/Sleep-Timer#main.cpp
