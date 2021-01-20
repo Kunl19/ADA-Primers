@@ -1,3 +1,12 @@
+Primer 8
+
+The program below uses an external data stream to hold contact information of places and their respective phone numbers. The while loop iterates through the text and saves
+both the places and numbers into two variables then adds them into a dictionary. When the user inputs a number or place that is in the text file a for loop iterates through 
+the dictionary to find the specific it key value and match it to its corresponding value in the dictionary. Both values are then outputted. When creating this project I had 
+an issue when using the place value as the key. It only found the correct values when using the phone numbers to search for the corerct output values
+
+
+
 //https://repl.it/@Kunl19/PhoneDirectory#main.cpp
 
 
@@ -10,13 +19,11 @@ using namespace std;
 
 int main() {
 
-    //Dictionary called content
     map<std::string, std::string> content;
     ifstream in("new.txt");
     string word, number;
 
-    while (getline(in, number) && getline(in, word)) { content[number] = word;}
-    //Add each line in text file into dictionary 
+    while (getline(in, word) && getline(in, number)) { content[number] = word;}
 
     // for (const auto& p : content)
     //     std::cout << p.first << " : "
@@ -28,18 +35,17 @@ int main() {
         cout << "Please enter a name or number to search \n";
 
         cin >> variable;
-        //cout << "searching " << content.size() << " records... \n\n";
+        cout << "searching " << content.size() << " records... \n\n";
 
         for (const auto& p : content)
         
             if (variable == p.first) {
-                cout << "contact details :\n " << p.first << ", \t" << "t: " << p.second <<endl;
+                cout << "contact details :\n " << p.second << ", \t" << "t: " << p.first <<endl;
 
             }
-            //Prints the contact info using dictionary keys
 
             else if (variable == p.second) {
-                cout << "contact details :\n " << p.first << ", \t" << "t: " << p.second <<endl;
+                cout << "contact details :\n " << p.second << ", \t" << "t: " << p.first <<endl;
 
             }
 
