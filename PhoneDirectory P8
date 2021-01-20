@@ -3,7 +3,7 @@ Primer 8
 The program below uses an external data stream to hold contact information of places and their respective phone numbers. The while loop iterates through the text and saves
 both the places and numbers into two variables then adds them into a dictionary. When the user inputs a number or place that is in the text file a for loop iterates through 
 the dictionary to find the specific it key value and match it to its corresponding value in the dictionary. Both values are then outputted. When creating this project I had 
-an issue when using the place value as the key. It only found the correct values when using the phone numbers to search for the corerct output values
+an issue when using the place value as the key. It only found the correct values when using the phone numbers to search for the corerct output values.
 
 
 
