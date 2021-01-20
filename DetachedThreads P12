@@ -1,3 +1,10 @@
+Primer 12
+
+The code below initialises two threads where each thread calls a timer function. The first timer duration is 5 seconds and the second one is 10 seconds. I used the deatch 
+detach() method making the specified thread independent from the calling of the threads execution. The thread becomes non-joinable hence only the start and end of the 
+main thread is outputted in the console.
+
+
 #include <iostream>
 #include <iostream>       
 #include <thread>         
@@ -42,5 +49,5 @@ int main() {
   
 }
 
-//This is output is different to the joining thread as we use the detach() method making the specified thread independent from the tcalling threads execution. 
+//This is output is different to the joining thread as we use the detach() method making the specified thread independent from the calling of the threads execution. 
 The thread becomes non-joinable
