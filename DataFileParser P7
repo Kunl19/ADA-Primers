@@ -1,3 +1,10 @@
+Primer 7
+
+This program displays data from a external data stream onto a console. In this case a csv file called file.csv is read using ifstream. A while loop is used to read each line
+and save the information in a variable called info. It also saves indvidual data after every comma allowing us to format the data. An issue i had occured when trying to
+format data into coloums. When longer last names were found in the table to salary data would be shifted to the right when the information was ouputted in the console.
+
+
 #include <iostream>
 #include <fstream>
 #include <iostream>
@@ -19,12 +26,12 @@ int main() {
       ifstream MyReadFile("file.csv");
       //Read file
 
-      std::cout << "\n\nInitial\t\t\t\tLast\t\t\t\tSalary";
-      std::cout << "\n................................................\n";
+      cout << "\n\nInitial\t\t\t\tLast\t\t\t\tSalary";
+      cout << "\n................................................\n";
 
       while (getline (MyReadFile, Info , ',')) {
         //cout << Name;     
-        std::cout << Info << "\t\t" << "\t\t";
+        cout << Info << "\t\t" << "\t\t";
         //Output info
       }
 
