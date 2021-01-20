@@ -1,3 +1,7 @@
+The code below finds the area of a circle when the radius of a circle is passed through as a paramter in the area function. The function is inside of the class function where
+I have also created a constructer and a destructor. In the main method the we then output the area using the area function and the value inside of the class constructor. When 
+the code finishes running the console output in the destructor then runs.
+
 //https://repl.it/@Kunl19/AreaOfACircle#main.cpp
 
 #include <iostream>
