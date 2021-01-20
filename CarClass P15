@@ -1,3 +1,13 @@
+Primer 15
+
+The program below is car menu displaying the status of a car. This includes the car colour, make, if it is unlocked and whether the car engine is on or off. I used a series
+of methods to create the fucntionality in the menu which are in the Car Class. In the main function the values of the car colour and car make are set. The status of the car 
+is also set where the car engine will either be on or off or the car will be locked or unlocked. When the menu is displayed a user is able to selct a specific numerical 
+value to change the cars status. Once finished the user can click 0 breaking the loop and ending the loop. The constructer method then runs. 
+
+
+
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -16,7 +26,7 @@ void Menu() {
 
 }
 
-class Line {
+class Car {
     public:
 
         void set_colour(string col);
@@ -31,8 +41,8 @@ class Line {
         void locked(bool lock);
         bool status(void);
 
-        Line();  
-        ~Line();  
+        Car();  
+        ~Car();  
 
     private:
         double length;
@@ -43,52 +53,52 @@ class Line {
 
 // Member functions definitions including constructor
 
-Line::Line(void) {
+Car::Car(void) {
     //cout << "Object is being created" << endl;
 }
-Line::~Line(void) {
-    //cout << "Object is being deleted" << endl;
+Car::~Car(void) {
+    cout << "Goodbye";
 }
 
 //Set Colour
 
-void Line::set_colour(string col) {
+void Car::set_colour(string col) {
     colour = col;
 }
 
-string Line::get_colour(void) {
+string Car::get_colour(void) {
     return colour;
 }
 
 //Car make
 
-void Line::set_make(string mak) {
+void Car::set_make(string mak) {
     make = mak;
 }
 
-string Line::get_make(void) {
+string Car::get_make(void) {
     return make;
 }
 
 
 //Engine status
 
-void Line::engine_on() {
+void Car::engine_on() {
   
 }
 
-void Line::engine_off() {
+void Car::engine_off() {
     
 }
 
 
 //Locked/Unlocked
 
-void Line::locked(bool lock) {
+void Car::locked(bool lock) {
     isLocked = lock;
 }
 
-bool Line::status(void) {
+bool Car::status(void) {
     return isLocked;
 }
 
@@ -98,26 +108,26 @@ bool Line::status(void) {
 
 // Main function for the program
 int main() {
-    Line line;
+    Car Car;
 
-    line.set_colour("Blue");
-    line.set_make("Honda");
+    Car.set_colour("Blue");
+    Car.set_make("Honda");
     
     //Lock or Unlocked 
-    line.locked(true); //status  = 1
-    //line.locked(false);//status = 0
+    Car.locked(true); //status  = 1
+    //Car.locked(false);//status = 0
 
     string value;
     string status = "Off";
 
-    if (line.status() == 1) {
+    if (Car.status() == 1) {
         value = "locked";
     }
     else {
         value = "unlocked";
     }
 
-    cout << "Car Colour: " << line.get_colour() << " " << "Car Make: " << line.get_make() << " " << value << " " << "Engine: " << " "<< status;
+    cout << "Car Colour: " << Car.get_colour() << " " << "Car Make: " << Car.get_make() << " " << value << " " << "Engine: " << " "<< status;
     cout << "\n";
    
     
@@ -131,21 +141,21 @@ int main() {
         
         if (end == 1) {
         //Engine is on
-            line.engine_on();
+            Car.engine_on();
             status = "On";
 
             
         }
         else if (end == 2) {
-            line.engine_off();
+            Car.engine_off();
             status = "Off";
         }
 
         else if (end == 3) {
             //Lock Car
-            if (line.status() == 0)
+            if (Car.status() == 0)
             {
-                //line.status() == 1;
+                //Car.status() == 1;
                 cout << "Car is now locked\n";
                 value = "locked";
             }
@@ -155,10 +165,10 @@ int main() {
             }           
         }
         else if (end == 4) {
-            if (line.status() == 1)
+            if (Car.status() == 1)
             {
-                //line.status() == 0;
-                cout << "The car is now unlocked\n";
+                //Car.status() == 0;
+                cout << "The Car is now unlocked\n";
                 value = "unlocked";
             }
             else {
@@ -171,13 +181,11 @@ int main() {
             //cin >> end;
         }
 
-        cout << "Car Colour: " << line.get_colour() << " " << "Car Make: " << line.get_make() << " " << value << " " << "Engine: " << " " << status;
+        cout << "Car Colour: " << Car.get_colour() << " " << "Car Make: " << Car.get_make() << " " << value << " " << "Engine: " << " " << status;
         cout << "\n";
         Menu();
         cin >> end;
     }
-    cout << "Goodbye";
 
     return 0;
 }
-
