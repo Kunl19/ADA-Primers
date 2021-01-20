@@ -1,3 +1,10 @@
+Primer 11
+
+The code below initialises two threads where each thread calls a timer function. The first timer duration is 5 seconds and the second one is 10 seconds. I then used 
+the join() method which called the threads execution until the specified thread has terminated or completed. The start and end of thread 1 and 2 are shown between the start
+and end of the main thread.
+
+
 #include <iostream>
 #include <iostream>       
 #include <thread>         
