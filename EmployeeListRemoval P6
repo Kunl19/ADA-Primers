@@ -1,8 +1,8 @@
 //https://repl.it/@Kunl19/EmployeeListRemoval#main.cpp
 
 The program allows user to view a list of 5 employees. They are then prompted to remove one employees name by entering it on the command line.I was able to 
-push the employee names into a vector to store the values. Once I looped over the vector to dispay the names to user I used the find and remove method to find the 
-specific name the user entered and remove it from the vector. The new list of 4 names is then displayed.
+push the employee names into a vector to store the values. Once stored I looped over the vector to dispay the names to user. I then used the find and remove 
+method to find the specific name the user entered and remove it from the vector. The new list of 4 names is then displayed by looping over the vector again.
 
 #include <iostream>
 #include <vector>
